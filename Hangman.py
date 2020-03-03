@@ -1,7 +1,8 @@
 import random
 WORDLIST = [""]
 updatedWord = ""
-
+secret = ""
+letter = ""
 def initialize():
     global updatedWord
     global SECRET
@@ -31,6 +32,12 @@ def main():
     
     initialize()
     getLetter()
-    
 
-
+def test():
+    if (letter in secret):
+        pos = secret.find(letter)
+        updatedWord[pos] = letter
+        print updatedWord.join()
+        ifWon()
+    else:
+        getLetter()
